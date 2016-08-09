@@ -1,0 +1,103 @@
+/*
+
+Captions Markup Pattern & Explanation
+
+data-effeckt-type =
+"<quarter-appear | quarter-slide-up | quarter-slide-side | quarter-fall-in |
+quarter-two-step | quarter-zoom | cover-fade | cover-push-right | revolving-door-left |
+revolving-door-right | revolving-door-top | revolving-door-bottom | cover-slide-top |
+offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
+
+<figure class="effeckt-caption" data-effeckt-type="">
+  <img src="" alt="">
+  <figcaption>
+    <div class="effeckt-figcaption-wrap"></div>
+  </figcaption>
+</figure>
+
+*/
+.effeckt-caption {
+    position: relative;
+}
+
+.effeckt-caption img {
+    transition: 500ms;
+}
+
+.effeckt-caption figcaption {
+    position: absolute;
+    transition: 500ms;
+    width: 100%;
+}
+
+.effeckt-caption[data-effeckt-type="quarter-zoom"] figcaption {
+    bottom: 0;
+    left: 0;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    text-align: center;
+    opacity: 0;
+}
+
+.effeckt-caption[data-effeckt-type="quarter-zoom"] img {
+    transition: 500ms;
+}
+
+.effeckt-caption[data-effeckt-type="quarter-zoom"]:hover figcaption,
+.effeckt-caption[data-effeckt-type="quarter-zoom"]:active figcaption,
+.effeckt-caption[data-effeckt-type="quarter-zoom"].active figcaption {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.effeckt-caption[data-effeckt-type="quarter-zoom"]:hover img,
+.effeckt-caption[data-effeckt-type="quarter-zoom"]:active img,
+.effeckt-caption[data-effeckt-type="quarter-zoom"].active img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*
+start no effeckt
+*/
+
+
+.effeckt-caption figcaption {
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.sponsors > .effeckt-caption img {
+    /*transition: 500ms;*/
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.effeckt-caption figcaption.gold {
+    padding: 0;
+}
+
+/*.sponsors > .effeckt-caption:hover figcaption,
+.sponsors > .effeckt-caption:active figcaption,
+.sponsors > .effeckt-caption.active figcaption {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.sponsors > .effeckt-caption:hover img,
+.sponsors > .effeckt-caption:active img,
+.sponsors > .effeckt-caption.active img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}*/
